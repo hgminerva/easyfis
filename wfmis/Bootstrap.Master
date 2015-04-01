@@ -1,0 +1,173 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Bootstrap.master.cs" Inherits="wfmis.Bootstrap" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" style='background-color:gray;height:100%'>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
+
+    <title>EasyFIS</title>
+
+    <link rel="icon" href="/Images/favicon1.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/Images/favicon1.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" type="text/css" media="all" href="/Content/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/Content/bootstrap/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/Content/bootstrap/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/Content/font-awesome/css/font-awesome.css"  />
+    <link rel="stylesheet" type="text/css" media="all" href="/Content/bootstrap/global.css" />
+        
+    <script type="text/javascript" charset="utf-8" src="/Scripts/jquery/jquery-1.9.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/Scripts/bootstrap/bootstrap.min.js")></script> 
+    <script type="text/javascript" charset="utf-8" src="/Scripts/bootstrap/bootstrap.tab.js")></script>
+
+    
+    <%--Slider--%>
+    <link href="/Plugins/revolution_slider/css/rs-style.css" rel="stylesheet" media="screen" />
+    <link href="/Plugins/revolution_slider/rs-plugin/css/settings.css" rel="stylesheet" media="screen" /> 
+
+  <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body style='background-color:#BDDAE2'>
+
+    <form id="Form1" runat="server">
+
+    <nav id="navigation">
+      <div class="container">
+        <ul class="navlinks">
+          <li><a href="/Default.aspx"><img src="/Images/efsmall.png" /></a></li>
+          <li><a href="/About.aspx">About</a></li>
+          <li><a href="/Support.aspx">Support</a></li>
+          <li>
+            <section id="login">
+                <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <a id="loginLink" runat="server" href="~/Account/Login.aspx">Login</a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <a id="A1" runat="server" class="mainmenu" href="~/View/SysMenu.aspx" title="System Menu">
+                            Main Menu
+                        </a>
+                        <a id="A2" runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
+                            Hello <asp:LoginName ID="LoginName1" runat="server" CssClass="username" /> !
+                        </a>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </section>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+        <asp:LoginView ID="LoginView3" runat="server" ViewStateMode="Disabled">
+            <LoggedInTemplate>
+                <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/View/SysMenu.aspx"><b><%=((wfmis.Global)HttpContext.Current.ApplicationInstance).CurrentCompany %> \ <%=((wfmis.Global)HttpContext.Current.ApplicationInstance).CurrentBranch %>:</b></a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b>System</b><b class="caret"></b></a>
+                            <ul class="dropdown-menu" style="background-color:lightblue">
+                                <li><a href="/View/MstUserStaffList.aspx">Users</a></li>
+                                <li><a href="/View/SysFolders.aspx">System Tables</a></li>
+                                <li><a href="/View/SysUtilities.aspx">Utilities</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b>Setup</b><b class="caret"></b></a>
+                            <ul class="dropdown-menu" style="background-color:lightblue">
+                                <li><a href="/View/MstSupplierList.aspx">Suppliers</a></li>
+                                <li><a href="/View/MstCustomerList.aspx">Customers</a></li>
+                                <li><a href="/View/MstItemList.aspx">Items</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/View/MstAccountList.aspx">Chart of Accounts</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/View/MstDiscountList.aspx">Discounts</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b>Activity</b><b class="caret"></b></a>
+                            <ul class="dropdown-menu" style="background-color:lightblue">
+                                <li><a href="/View/TrnPurchaseOrderList.aspx">Purchase Order</a></li>
+                                <li><a href="/View/TrnPurchaseInvoiceList.aspx">Purchase Invoice</a></li>
+                                <li><a href="#">Supplier Returns</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/View/TrnSalesOrderList.aspx">Sales Order</a></li>
+                                <li><a href="/View/TrnSalesInvoiceList.aspx">Sales Invoice</a></li>
+                                <li><a href="#">Customer Returns</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/View/TrnDisbursementList.aspx">Disbursement</a></li>
+                                <li><a href="/View/TrnCollectionList.aspx">Collection</a></li>
+                                <li><a href="/View/TrnBank.aspx">Bank Reconciliation</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/View/TrnStockInList.aspx">Stock-In</a></li>
+                                <li><a href="/View/TrnStockOutList.aspx">Stock-Out</a></li>
+                                <li><a href="/View/TrnStockTransferList.aspx">Stock-Transfer</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/View/TrnJournalVoucherList.aspx">Journal Voucher</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><b>Report</b><b class="caret"></b></a>
+                            <ul class="dropdown-menu" style="background-color:lightblue">
+                                <li><a href="/View/RepPurchases.aspx">Purchase Reports</a></li>
+                                <li><a href="/View/RepSales.aspx">Sales Reports</a></li>
+                                <li><a href="/View/RepDisbursement.aspx">Disbursement Reports</a></li>
+                                <li><a href="/View/RepCollection.aspx">Collection Reports</a></li>
+                                <li><a href="#">Return Reports</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/View/RepFinancialStatement.aspx">Financial Statements</a></li>
+                                <li><a href="/View/RepAccountsPayable.aspx">Accounts Payable</a></li>
+                                <li><a href="/View/RepAccountsReceivable.aspx">Accounts Receivable</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/View/RepInventory.aspx">Inventory</a></li>
+                            </ul>
+                        </li>
+                    </ul>  
+                    <ul class="nav pull-right">
+                        <li><a href="/Account/Manage.aspx"><b>Subscriber:<%=((wfmis.Global)HttpContext.Current.ApplicationInstance).CurrentSubscriberUser %></b></a></li>
+                    </ul>
+                </nav>
+            </LoggedInTemplate>
+        </asp:LoginView>
+    </div>
+
+    <asp:ContentPlaceHolder ID="body" runat="server"></asp:ContentPlaceHolder>
+
+    <div id="footer" style="background-color:gray;height:100%">
+        <div class="container">
+            <p>
+                <a class="btn btn-primary" href="https://www.facebook.com/pages/Easyfis/1399564026979578"><i class="icon-large icon-facebook"></i> | Like us in Facebook</a>
+                <a class="btn btn-info" href="https://twitter.com/hgminerva"><i class="icon-large icon-twitter"></i> | Follow us inTwitter</a>
+            </p>
+            <p style='color:white'>
+                EasyFIS Beta - v1.20140715 - <a href="http://www.innosoft.ph/" style='color:white'>© Innosoft Solutions</a>.
+            </p>
+        </div>
+    </div>
+
+    </form>
+</body>
+
+<%--Slider--%>
+<script type="text/javascript" src="/Plugins/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="/Plugins/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script> 
+<script type="text/javascript" src="/Scripts/app.js"></script>
+<script type="text/javascript" src="/Scripts/index.js"></script> 
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        App.init();
+        Index.initRevolutionSlider();
+    });
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+
+</html>

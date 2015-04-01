@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="Home" description="Home" url="~/Default.aspx" >
+    
+    <siteMapNode title="Main Menu" description="Main Menu" url="~/View/SysMenu.aspx">
+
+      <siteMapNode title="Supplier" description="Supplier" url="~/View/MstSupplierList.aspx">
+        <siteMapNode title="Supplier Detail" description="Supplier Detail" url="~/View/MstSupplierDetail.aspx" />
+      </siteMapNode>
+        
+      <siteMapNode title="Customer" description="Customer" url="~/View/MstCustomerList.aspx">
+        <siteMapNode title="Customer Detail" description="Customer Detail" url="~/View/MstCustomerDetail.aspx" />
+      </siteMapNode>
+      
+      <siteMapNode title="Item" description="Item" url="~/View/MstItemList.aspx">
+        <siteMapNode title="Item Detail" description="Item Detail" url="~/View/MstItemDetail.aspx" />
+      </siteMapNode>
+
+      <siteMapNode title="Discount" description="Discount" url="~/View/MstDiscountList.aspx">
+        <siteMapNode title="Discount Detail" description="Discount Detail" url="~/View/MstDiscountDetail.aspx" />
+      </siteMapNode>
+      
+      <siteMapNode title="User/Staff" description="User/Staff" url="~/View/MstUserStaffList.aspx">
+        <siteMapNode title="User/Staff Detail" description="User/Staff Detail" url="~/View/MstUserStaffDetail.aspx" />
+      </siteMapNode>
+
+      <siteMapNode title="System Folders" description="System Folders" url="~/View/SysFolders.aspx">
+        <siteMapNode title="Unit Detail" description="Unit Detail" url="~/View/MstUnitDetail.aspx" />
+        <siteMapNode title="Tax Detail" description="Tax Detail" url="~/View/MstTaxDetail.aspx" />
+        <siteMapNode title="Bank Detail" description="Bank Detail" url="~/View/MstArticleBankDetail.aspx" />
+        <siteMapNode title="Term Detail" description="Term Detail" url="~/View/MstTermDetail.aspx" />
+        <siteMapNode title="Pay Type Detail" description="Pay Type Detail" url="~/View/MstPayTypeDetail.aspx" />
+      </siteMapNode>
+      
+      <siteMapNode title="System Utilities" description="System Utilities" url="~/View/SysUtilities.aspx">
+      </siteMapNode>
+        
+      <siteMapNode title="Chart Of Accounts" description="Chart Of Accounts" url="~/View/MstAccountList.aspx">
+        <siteMapNode title="Account Detail" description="Account Detail" url="~/View/MstAccountDetail.aspx" />
+        <siteMapNode title="Account Type Detail" description="Account Type Detail" url="~/View/MstAccountTypeDetail.aspx" />
+        <siteMapNode title="Account Cash Flow Detail" description="Account Type Detail" url="~/View/MstAccountCashFlowDetail.aspx" />
+        <siteMapNode title="Chart Of Accounts - Report" description="Chart Of Accounts - Report" url="~/View/MstAccountPreview.aspx" />
+      </siteMapNode>
+      
+      <siteMapNode title="Journal Voucher" description="Journal Voucher" url="~/View/TrnJournalVoucherList.aspx">
+        <siteMapNode title="Journal Voucher Detail" description="Journal Voucher Detail" url="~/View/TrnJournalVoucherDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Journal Voucher Report" description="Journal Voucher Report" url="~/View/TrnJournalVoucherPreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+      
+      <siteMapNode title="Purchase Order" description="Purchase Order" url="~/View/TrnPurchaseOrderList.aspx">
+        <siteMapNode title="Purchase Order Detail" description="Purchase Order Detail" url="~/View/TrnPurchaseOrderDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Purchase Order Report" description="Purchase Order Report" url="~/View/TrnPurchaseOrderPreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode title="Purchase Invoice" description="Purchase Invoice" url="~/View/TrnPurchaseInvoiceList.aspx">
+        <siteMapNode title="Purchase Invoice Detail" description="Purchase Invoice Detail" url="~/View/TrnPurchaseInvoiceDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Purchase Invoice Report" description="Purchase Invoice Report" url="~/View/TrnPurchaseInvoicePreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode title="Accounts Payable" description="Accounts Payable" url="~/View/RepAccountsPayable.aspx" />
+      
+      <siteMapNode title="Disbursement" description="Disbursement" url="~/View/TrnDisbursementList.aspx">
+        <siteMapNode title="Disbursement Detail" description="Disbursement Detail" url="~/View/TrnDisbursementDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Disbursement Report" description="Disbursement Report" url="~/View/TrnDisbursementPreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+      
+      <siteMapNode title="Sales Order" description="Sales Order" url="~/View/TrnSalesOrderList.aspx">
+        <siteMapNode title="Sales Order Detail" description="Sales Order Detail" url="~/View/TrnSalesOrderDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Sales Order Report" description="Sales Order Report" url="~/View/TrnSalesOrderPreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode title="Sales Invoice" description="Sales Invoice" url="~/View/TrnSalesInvoiceList.aspx">
+        <siteMapNode title="Sales Invoice Detail" description="Sales Invoice Detail" url="~/View/TrnSalesInvoiceDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Sales Invoice Report" description="Sales Invoice Report" url="~/View/TrnSalesInvoicePreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode title="Accounts Receivable" description="Accounts Receivable" url="~/View/RepAccountsReceivable.aspx" />
+      
+      <siteMapNode title="Collection" description="Collection" url="~/View/TrnCollectionList.aspx">
+        <siteMapNode title="Collection Detail" description="Collection Detail" url="~/View/TrnCollectionDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Collection Report" description="Collection Report" url="~/View/TrnCollectionPreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode title="Stock In" description="Stock In" url="~/View/TrnStockInList.aspx">
+        <siteMapNode title="Stock In Detail" description="Stock In Detail" url="~/View/TrnStockInDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Stock In Report" description="Stock In Report" url="~/View/TrnStockInPreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode title="Stock Out" description="Stock Out" url="~/View/TrnStockOutList.aspx">
+        <siteMapNode title="Stock Out Detail" description="Stock Out Detail" url="~/View/TrnStockOutDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Stock Out Report" description="Stock Out Report" url="~/View/TrnStockOutPreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode title="Stock Transfer" description="Stock Transfer" url="~/View/TrnStockTransferList.aspx">
+        <siteMapNode title="Stock Transfer Detail" description="Stock Transfer Detail" url="~/View/TrnStockTransferDetail.aspx" queryStringToInclude="Id" >
+          <siteMapNode title="Stock Transfer Report" description="Stock Transfer Report" url="~/View/TrnStockTransferPreview.aspx" />
+        </siteMapNode>
+      </siteMapNode>
+
+      <siteMapNode title="Financial Statements" description="Financial Statements" url="~/View/RepFinancialStatement.aspx" />
+
+      <siteMapNode title="Bank Reconciliation" description="Bank Reconciliation" url="~/View/TrnBank.aspx" />
+
+      <siteMapNode title="Inventory" description="Inventory" url="~/View/RepInventory.aspx" />
+
+      <siteMapNode title="Disbursement Report" description="Disbursement Report" url="~/View/RepDisbursement.aspx" />
+
+      <siteMapNode title="Collection Report" description="Collection Report" url="~/View/RepCollection.aspx" />
+
+      <siteMapNode title="Sales Report" description="Sales Report" url="~/View/RepSales.aspx" />
+
+      <siteMapNode title="Purchases Report" description="Purchases Report" url="~/View/RepPurchases.aspx" />
+
+      <siteMapNode title="Settings" description="Settings" url="~/Account/Manage.aspx">
+        <siteMapNode title="Company Detail" description="Company Detail" url="~/View/MstCompanyDetail.aspx" />
+      </siteMapNode>
+      
+      <!--Admin Pages-->
+      <siteMapNode title="User List" description="User List" url="~/View/Admin/User.aspx">
+        <siteMapNode title="User Detail" description="User Detail" url="~/View/Admin/UserDetail.aspx" />
+      </siteMapNode>
+      
+    </siteMapNode>
+    
+  </siteMapNode>
+  
+</siteMap>

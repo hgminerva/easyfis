@@ -1,0 +1,1778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C16F468-B04B-4DE1-B9B8-205A53349928}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wfmis</RootNamespace>
+    <AssemblyName>wfmis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.9.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.0\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.20\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\JpegImage.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-select2\select2-spinner.gif" />
+    <Content Include="Content\bootstrap-select2\select2.png" />
+    <Content Include="Content\bootstrap\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.icon-large.css" />
+    <Content Include="Content\bootstrap\bootstrap.icon-large.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\global.css" />
+    <Content Include="Content\bootstrap\social-button.css" />
+    <Content Include="Content\bootstrap\social-buttons-3.css" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\column_render.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\complex_header.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\defaults.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\dom_multiple_elements.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\dom_toolbar.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\dt_events.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\events_live.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\footer_callback.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\html5-data-attributes.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\language_file.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\length_menu.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\row_callback.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\row_grouping.html" />
+    <Content Include="Content\datatables-1.10.0\examples\advanced_init\sort_direction_control.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\custom_data_flat.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\custom_data_property.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\data\arrays.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\data\arrays_custom_prop.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\data\arrays_subobjects.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\data\objects.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\data\objects_deep.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\data\objects_root_array.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\data\objects_subarrays.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\data\orthogonal.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\deep.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\defer_render.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\null_data_source.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\objects.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\objects_subarrays.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\orthogonal-data.html" />
+    <Content Include="Content\datatables-1.10.0\examples\ajax\simple.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\add_row.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\api_in_init.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\counter_columns.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\form.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\highlight.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\multi_filter.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\multi_filter_select.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\regex.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\row_details.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\select_row.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\select_single_row.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\show_hide.html" />
+    <Content Include="Content\datatables-1.10.0\examples\api\tabs_and_scrolling.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\alt_pagination.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\comma-decimal.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\complex_header.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\dom.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\filter_only.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\flexible_width.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\hidden_columns.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\language.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\multiple_tables.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\multi_col_sort.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\scroll_x.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\scroll_xy.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\scroll_y.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\scroll_y_theme.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\state_save.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\table_sorting.html" />
+    <Content Include="Content\datatables-1.10.0\examples\basic_init\zero_configuration.html" />
+    <Content Include="Content\datatables-1.10.0\examples\data_sources\ajax.html" />
+    <Content Include="Content\datatables-1.10.0\examples\data_sources\dom.html" />
+    <Content Include="Content\datatables-1.10.0\examples\data_sources\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\data_sources\js_array.html" />
+    <Content Include="Content\datatables-1.10.0\examples\data_sources\server_side.html" />
+    <Content Include="Content\datatables-1.10.0\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\plug-ins\api.html" />
+    <Content Include="Content\datatables-1.10.0\examples\plug-ins\dom_sort.html" />
+    <Content Include="Content\datatables-1.10.0\examples\plug-ins\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\plug-ins\range_filtering.html" />
+    <Content Include="Content\datatables-1.10.0\examples\plug-ins\sorting_auto.html" />
+    <Content Include="Content\datatables-1.10.0\examples\plug-ins\sorting_manual.html" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\bootstrap\3\dataTables.bootstrap.css" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\bootstrap\3\dataTables.bootstrap.js" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\bootstrap\3\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\bootstrap\images\sort_asc.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\bootstrap\images\sort_asc_disabled.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\bootstrap\images\sort_both.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\bootstrap\images\sort_desc.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\bootstrap\images\sort_desc_disabled.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\demo.css" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\demo.js" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\details_close.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\details_open.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\de_DE.txt" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\foundation\dataTables.foundation.css" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\foundation\dataTables.foundation.js" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\foundation\images\sort_asc.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\foundation\images\sort_asc_disabled.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\foundation\images\sort_both.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\foundation\images\sort_desc.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\foundation\images\sort_desc_disabled.png" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\jqueryui\dataTables.jqueryui.css" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\jqueryui\dataTables.jqueryui.js" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\jqueryui\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\syntax\shCore.css" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\syntax\shCore.js" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\custom_vars.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\defer_loading.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\ids.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\jsonp.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\object_data.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\pipeline.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\post.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\row_details.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\mysql.sql" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\postgres.sql" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\sqlite.sql" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\sqlserver.sql" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\select_rows.html" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\simple.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\bootstrap.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\cell-border.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\display.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\foundation.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\hover.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\index.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\jqueryUI.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\no-classes.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\order-column.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\row-border.html" />
+    <Content Include="Content\datatables-1.10.0\examples\styling\stripe.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\css\dataTables.autoFill.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\css\dataTables.autoFill.min.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\examples\columns.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\examples\complete-callback.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\examples\fill-both.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\examples\fill-horizontal.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\examples\scrolling.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\examples\simple.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\examples\step-callback.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\images\filler.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\js\dataTables.autoFill.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\js\dataTables.autoFill.min.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\AutoFill\Readme.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\css\dataTables.colReorder.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\css\dataTables.colReorder.min.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\alt_insert.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\colvis.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\col_filter.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\fixedcolumns.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\fixedheader.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\jqueryui.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\new_init.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\predefined.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\realtime.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\reset.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\scrolling.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\server_side.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\simple.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\examples\state_save.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\images\insert.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\js\dataTables.colReorder.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\js\dataTables.colReorder.min.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColReorder\Readme.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\css\dataTables.colVis.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\css\dataTables.colVis.min.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\button_order.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\exclude_columns.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\group_columns.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\jqueryui.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\mouseover.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\new_init.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\restore.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\simple.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\text.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\title_callback.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\two_tables.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\examples\two_tables_identical.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\js\dataTables.colVis.min.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\ColVis\Readme.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\css\dataTables.fixedColumns.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\bootstrap.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\colvis.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\col_filter.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\css_size.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\index_column.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\left_right_columns.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\right_column.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\rowspan.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\server-side-processing.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\simple.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\size_fixed.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\size_fluid.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\examples\two_columns.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\js\dataTables.fixedColumns.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\js\dataTables.fixedColumns.min.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedColumns\Readme.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\css\dataTables.fixedHeader.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\examples\header_footer.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\examples\simple.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\examples\top_left_right.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\examples\two_tables.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\examples\zIndexes.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\js\dataTables.fixedHeader.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\js\dataTables.fixedHeader.min.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\FixedHeader\Readme.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\css\dataTables.keyTable.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\css\dataTables.keyTable.min.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\examples\ajax.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\examples\events.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\examples\html.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\examples\scrolling.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\examples\simple.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\js\dataTables.keyTable.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\js\dataTables.keyTable.min.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\KeyTable\Readme.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\css\dataTables.scroller.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\examples\api_scrolling.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\examples\data\2500.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\examples\large_js_source.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\examples\server-side_processing.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\examples\simple.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\examples\state_saving.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\js\dataTables.scroller.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\Readme.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\css\dataTables.tableTools.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\alter_buttons.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\bootstrap.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\button_text.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\collection.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\defaults.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\index.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\multiple_tables.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\multi_instance.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\new_init.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\pdf_message.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\plug-in.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\select_column.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\select_multi.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\select_os.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\select_single.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\simple.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\examples\swf_path.html" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\background.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\collection.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\copy.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\copy_hover.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\csv.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\csv_hover.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\pdf.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\pdf_hover.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\print.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\print_hover.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\xls.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\xls_hover.png" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\Readme.txt" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\datatables-1.10.0\license.txt" />
+    <Content Include="Content\datatables-1.10.0\media\css\jquery.dataTables.css" />
+    <Content Include="Content\datatables-1.10.0\media\css\jquery.dataTables.min.css" />
+    <Content Include="Content\datatables-1.10.0\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\datatables-1.10.0\media\css\jquery.dataTables_themeroller.min.css" />
+    <Content Include="Content\datatables-1.10.0\media\images\back_disabled.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\back_enabled.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\back_enabled_hover.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\favicon.ico" />
+    <Content Include="Content\datatables-1.10.0\media\images\forward_disabled.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\forward_enabled.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\forward_enabled_hover.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\sort_asc.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\sort_asc_disabled.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\sort_both.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\sort_desc.png" />
+    <Content Include="Content\datatables-1.10.0\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\datatables-1.10.0\media\js\jquery.dataTables.js" />
+    <Content Include="Content\datatables-1.10.0\media\js\jquery.dataTables.min.js" />
+    <Content Include="Content\datatables-1.10.0\media\js\jquery.js" />
+    <Content Include="Content\datatable\report_datatable.css" />
+    <Content Include="Content\datatable\demo_table_v1.css" />
+    <Content Include="Content\datatable\demo_table_original.css" />
+    <Content Include="Content\datatable\demo_page.css" />
+    <Content Include="Content\datatable\demo_table.css" />
+    <Content Include="Content\datatable\demo_table_jui.css" />
+    <Content Include="Content\datatable\images\back_disabled.png" />
+    <Content Include="Content\datatable\images\back_enabled.png" />
+    <Content Include="Content\datatable\images\back_enabled_hover.png" />
+    <Content Include="Content\datatable\images\favicon.ico" />
+    <Content Include="Content\datatable\images\forward_disabled.png" />
+    <Content Include="Content\datatable\images\forward_enabled.png" />
+    <Content Include="Content\datatable\images\forward_enabled_hover.png" />
+    <Content Include="Content\datatable\images\sort_asc.png" />
+    <Content Include="Content\datatable\images\sort_asc_disabled.png" />
+    <Content Include="Content\datatable\images\sort_both.png" />
+    <Content Include="Content\datatable\images\sort_desc.png" />
+    <Content Include="Content\datatable\images\sort_desc_disabled.png" />
+    <Content Include="Content\datatable\jquery.dataTables.css" />
+    <Content Include="Content\datatable\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\datatable\old\datatable.v1.css" />
+    <Content Include="Content\datatable\old\images\back_disabled.jpg" />
+    <Content Include="Content\datatable\old\images\back_enabled.jpg" />
+    <Content Include="Content\datatable\old\images\forward_disabled.jpg" />
+    <Content Include="Content\datatable\old\images\forward_enabled.jpg" />
+    <Content Include="Content\datatable\old\images\sort_asc.png" />
+    <Content Include="Content\datatable\old\images\sort_asc_disabled.png" />
+    <Content Include="Content\datatable\old\images\sort_both.png" />
+    <Content Include="Content\datatable\old\images\sort_desc.png" />
+    <Content Include="Content\datatable\old\images\sort_desc_disabled.png" />
+    <Content Include="Content\bootstrap-datepicker\datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker\daterangepicker-bs2.css" />
+    <Content Include="Content\bootstrap-datepicker\daterangepicker-bs3.css" />
+    <Content Include="Content\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="Content\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\datatable\old\datatable.page.css" />
+    <Content Include="Content\datatable\old\datatable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\datatable\old\jquery-ui-1.8.4.custom.css" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\datatable\old\datatable.tools.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\about.jpg" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\bg-home.jpg" />
+    <Content Include="Images\bg-home1.jpg" />
+    <Content Include="Images\bg-snes-closeup-x500.jpg" />
+    <Content Include="Images\bg-snes-closeup.jpg" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\buttons\AccountsPayable.png" />
+    <Content Include="Images\buttons\AccountsReceivable.png" />
+    <Content Include="Images\buttons\BankReconciliation.png" />
+    <Content Include="Images\buttons\ChartOfAccounts.png" />
+    <Content Include="Images\buttons\Collection.png" />
+    <Content Include="Images\buttons\CollectionReport.png" />
+    <Content Include="Images\buttons\Customer.png" />
+    <Content Include="Images\buttons\Disbursement.png" />
+    <Content Include="Images\buttons\DisbursementReport.png" />
+    <Content Include="Images\buttons\Discount.png" />
+    <Content Include="Images\buttons\FinancialStatements.png" />
+    <Content Include="Images\buttons\Inventory.png" />
+    <Content Include="Images\buttons\Item.png" />
+    <Content Include="Images\buttons\JournalVoucher.png" />
+    <Content Include="Images\buttons\PurchaseInvoice.png" />
+    <Content Include="Images\buttons\PurchaseOrder.png" />
+    <Content Include="Images\buttons\PurchasesReport.png" />
+    <Content Include="Images\buttons\SalesInvoice.png" />
+    <Content Include="Images\buttons\SalesOrder.png" />
+    <Content Include="Images\buttons\SalesReport.png" />
+    <Content Include="Images\buttons\Settings.png" />
+    <Content Include="Images\buttons\StockIn.png" />
+    <Content Include="Images\buttons\StockOut.png" />
+    <Content Include="Images\buttons\StockTransfer.png" />
+    <Content Include="Images\buttons\Supplier.png" />
+    <Content Include="Images\buttons\SystemFolder.png" />
+    <Content Include="Images\buttons\Users.png" />
+    <Content Include="Images\buttons\Utility.png" />
+    <Content Include="Images\dribbble\01-snes-controller.png" />
+    <Content Include="Images\dribbble\02-snes-console-mini-icons.png" />
+    <Content Include="Images\dribbble\03-snes-video-game-dribbble.png" />
+    <Content Include="Images\dribbble\04-superpad-dark-illustration.png" />
+    <Content Include="Images\dribbble\05-retro-console-wars.png" />
+    <Content Include="Images\ef.jpg" />
+    <Content Include="Images\eflogo.png" />
+    <Content Include="Images\efsmall.png" />
+    <Content Include="Images\favicon1.ico" />
+    <Content Include="Images\glyphicons-halflings-white.png" />
+    <Content Include="Images\glyphicons-halflings.png" />
+    <Content Include="Images\glyphicons.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\logo\azure_logo.png" />
+    <Content Include="Images\logo\azure_logo_gray.png" />
+    <Content Include="Images\logo\bizspark_logo.png" />
+    <Content Include="Images\logo\bizspark_logo_gray.png" />
+    <Content Include="Images\logo\innosoft_logo.jpg" />
+    <Content Include="Images\logo\innosoft_logo.png" />
+    <Content Include="Images\logo\innosoft_logo_gray.png" />
+    <Content Include="Images\logo\msft_logo.png" />
+    <Content Include="Images\logo\msft_logo_gray.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\progress_bar.gif" />
+    <Content Include="Images\revolution\arrow_left.png" />
+    <Content Include="Images\revolution\arrow_left_bk.png" />
+    <Content Include="Images\revolution\arrow_left_blue.png" />
+    <Content Include="Images\revolution\arrow_right.png" />
+    <Content Include="Images\revolution\arrow_right_bk.png" />
+    <Content Include="Images\revolution\arrow_right_blue.png" />
+    <Content Include="Images\revolution\bg1.jpg" />
+    <Content Include="Images\revolution\bg10.jpg" />
+    <Content Include="Images\revolution\bg2.jpg" />
+    <Content Include="Images\revolution\bg3.jpg" />
+    <Content Include="Images\revolution\bg4.jpg" />
+    <Content Include="Images\revolution\bg5.jpg" />
+    <Content Include="Images\revolution\bg6.jpg" />
+    <Content Include="Images\revolution\bg7.jpg" />
+    <Content Include="Images\revolution\bg8.jpg" />
+    <Content Include="Images\revolution\bg9.jpg" />
+    <Content Include="Images\revolution\FMIS.png" />
+    <Content Include="Images\revolution\hint1-blue.png" />
+    <Content Include="Images\revolution\hint1-green.png" />
+    <Content Include="Images\revolution\hint1-orange.png" />
+    <Content Include="Images\revolution\hint1-red.png" />
+    <Content Include="Images\revolution\hint2-blue.png" />
+    <Content Include="Images\revolution\hint2-green.png" />
+    <Content Include="Images\revolution\hint2-orange.png" />
+    <Content Include="Images\revolution\hint2-red.png" />
+    <Content Include="Images\revolution\IHRIS.PNG" />
+    <Content Include="Images\revolution\ipad.png" />
+    <Content Include="Images\revolution\ipadmini.png" />
+    <Content Include="Images\revolution\iphone.png" />
+    <Content Include="Images\revolution\iphone_large.png" />
+    <Content Include="Images\revolution\iphone_left.png" />
+    <Content Include="Images\revolution\iphone_right.png" />
+    <Content Include="Images\revolution\iPOS.jpg" />
+    <Content Include="Images\revolution\IPOS.png" />
+    <Content Include="Images\revolution\lady.png" />
+    <Content Include="Images\revolution\mac.png" />
+    <Content Include="Images\revolution\macbook.png" />
+    <Content Include="Images\revolution\man-winner.png" />
+    <Content Include="Images\revolution\menustairs.jpg" />
+    <Content Include="Images\revolution\slides\image1.png" />
+    <Content Include="Images\revolution\slides\image10.png" />
+    <Content Include="Images\revolution\slides\image12.png" />
+    <Content Include="Images\revolution\slides\image13.png" />
+    <Content Include="Images\revolution\slides\image14.png" />
+    <Content Include="Images\revolution\slides\image15.png" />
+    <Content Include="Images\revolution\slides\image16.png" />
+    <Content Include="Images\revolution\slides\image2.png" />
+    <Content Include="Images\revolution\slides\image3.png" />
+    <Content Include="Images\revolution\slides\image4.png" />
+    <Content Include="Images\revolution\slides\image5.png" />
+    <Content Include="Images\revolution\slides\image6.png" />
+    <Content Include="Images\revolution\slides\image7.png" />
+    <Content Include="Images\revolution\slides\image8.png" />
+    <Content Include="Images\revolution\slides\image9.png" />
+    <Content Include="Images\revolution\thumbs\thumb1.jpg" />
+    <Content Include="Images\revolution\thumbs\thumb2.jpg" />
+    <Content Include="Images\revolution\thumbs\thumb3.jpg" />
+    <Content Include="Images\revolution\thumbs\thumb4.jpg" />
+    <Content Include="Images\revolution\thumbs\thumb5.jpg" />
+    <Content Include="Images\revolution\thumbs\thumb6.jpg" />
+    <Content Include="Images\revolution\thumbs\thumb7.jpg" />
+    <Content Include="Images\revolution\woman.png" />
+    <Content Include="Images\screenshots\screen4.png" />
+    <Content Include="Images\screenshots\screen1.png" />
+    <Content Include="Images\screenshots\screen2.png" />
+    <Content Include="Images\screenshots\screen3.png" />
+    <Content Include="Images\screenshots\screen5.png" />
+    <Content Include="Images\screenshots\screen6.png" />
+    <Content Include="Images\screenshots\screen7.png" />
+    <Content Include="Images\select2x2.png" />
+    <Content Include="Images\support.jpg" />
+    <Content Include="packages.config" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Bootstrap.Master" />
+    <Content Include="Images\dribbble\Thumbs.db" />
+    <Content Include="Data\wfmis.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>wfmis.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\datatable\old\images\Sorting icons.psd" />
+    <Content Include="Plugins\bxslider\images\bx_loader.gif" />
+    <Content Include="Plugins\bxslider\images\left-hover.png" />
+    <Content Include="Plugins\bxslider\images\left.png" />
+    <Content Include="Plugins\bxslider\images\right-hover.png" />
+    <Content Include="Plugins\bxslider\images\right.png" />
+    <Content Include="Plugins\bxslider\jquery.bxslider.css" />
+    <Content Include="Plugins\bxslider\jquery.bxslider.js" />
+    <Content Include="Plugins\bxslider\jquery.bxslider.min.js" />
+    <Content Include="Plugins\revolution_slider\css\preview.css" />
+    <Content Include="Plugins\revolution_slider\css\rs-style.css" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\css\bootstrap-responsive.css" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\css\bootstrap.css" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\css\documenter_style.css" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\images\image_1.gif" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\images\image_2.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons-halflings.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_009_magic.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_042_group.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_079_podium.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_082_roundabout.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_155_show_thumbnails.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_163_iphone.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_214_resize_small.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_266_book_open.png" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\json.txt" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\js\bootstrap-min.js" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\js\jquery.easing.js" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\js\jquery.js" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\js\jquery.scrollTo.js" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\js\scripts.js" />
+    <Content Include="Plugins\revolution_slider\documentation\css\documenter_style.css" />
+    <Content Include="Plugins\revolution_slider\documentation\css\img\info.png" />
+    <Content Include="Plugins\revolution_slider\documentation\css\img\pre_bg.png" />
+    <Content Include="Plugins\revolution_slider\documentation\css\img\warning.png" />
+    <Content Include="Plugins\revolution_slider\documentation\css\shDocumenter.css" />
+    <Content Include="Plugins\revolution_slider\documentation\documentation.html" />
+    <Content Include="Plugins\revolution_slider\documentation\js\jquery.1.6.4.js" />
+    <Content Include="Plugins\revolution_slider\documentation\js\jquery.easing.js" />
+    <Content Include="Plugins\revolution_slider\documentation\js\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="Plugins\revolution_slider\documentation\js\script.js" />
+    <Content Include="Plugins\revolution_slider\documentation\js\shBrushCss.js" />
+    <Content Include="Plugins\revolution_slider\documentation\js\shBrushJScript.js" />
+    <Content Include="Plugins\revolution_slider\documentation\js\shBrushXml.js" />
+    <Content Include="Plugins\revolution_slider\documentation\js\shCore.js" />
+    <Content Include="Plugins\revolution_slider\images\tiles\bgtile.jpg" />
+    <Content Include="Plugins\revolution_slider\images\tiles\bgtile.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\check.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\divider.jpg" />
+    <Content Include="Plugins\revolution_slider\images\tiles\divider.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\dragnotch.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\dragsliderbg.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\dropdown.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\inputfield.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\logo.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\minishadow.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\minishadow2.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\minishadow3.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\minus.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\no.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\ok.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\plus.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\radio.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\rotator-line.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\rotator.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\shadow3_large.png" />
+    <Content Include="Plugins\revolution_slider\images\tiles\sliderconfigheadline.png" />
+    <Content Include="Plugins\revolution_slider\index-fullwidth.html" />
+    <Content Include="Plugins\revolution_slider\index-static.html" />
+    <Content Include="Plugins\revolution_slider\index.html" />
+    <Content Include="Plugins\revolution_slider\previewjs\preview-normal.js" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrowleft.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrowright.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrow_left.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrow_right.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\black50.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\bullet.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\bullets.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\bullets2.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\bullet_bk.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\coloredbg.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\grain.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\large_left.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\large_left_bk.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\large_right.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\large_right_bk.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\loader.gif" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\loader2.gif" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\navigdots.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\shadow1.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\shadow2.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\shadow3.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\small_left.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\small_right.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\timer.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\timerdot.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\transparent.jpg" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\white50.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\css\settings %28In Konflikt stehende Kopie von Flash Horvath 2013-02-13%29.css" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\css\settings.css" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\images\decor_inside.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\images\gradient\g30.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\images\gradient\g40.png" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\autonumeric\autoNumeric.js" />
+    <Content Include="Scripts\bootstrap-select2\bower.json" />
+    <Content Include="Scripts\bootstrap-select2\LICENSE" />
+    <Content Include="Scripts\bootstrap-select2\README.md" />
+    <Content Include="Scripts\bootstrap-select2\release.sh" />
+    <Content Include="Scripts\bootstrap-select2\select2.jquery.json" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_en.js.template" />
+    <Content Include="Content\bootstrap\social-buttons.less" />
+    <Content Include="Content\bootstrap\social-buttons-3.less" />
+    <Content Include="Content\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome\font\FontAwesome.otf" />
+    <Content Include="Content\font-awesome\less\bootstrap.less" />
+    <Content Include="Content\font-awesome\less\core.less" />
+    <Content Include="Content\font-awesome\less\extras.less" />
+    <Content Include="Content\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="Content\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\font-awesome\less\icons.less" />
+    <Content Include="Content\font-awesome\less\mixins.less" />
+    <Content Include="Content\font-awesome\less\path.less" />
+    <Content Include="Content\font-awesome\less\variables.less" />
+    <Content Include="Content\font-awesome\scss\font-awesome-ie7.scss" />
+    <Content Include="Content\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\font-awesome\scss\_bootstrap.scss" />
+    <Content Include="Content\font-awesome\scss\_core.scss" />
+    <Content Include="Content\font-awesome\scss\_extras.scss" />
+    <Content Include="Content\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\font-awesome\scss\_path.scss" />
+    <Content Include="Content\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\datatable\images\Sorting icons.psd" />
+    <Content Include="Content\datatable\images\Thumbs.db" />
+    <Content Include="Plugins\revolution_slider\documentation\.DS_Store" />
+    <Content Include="Plugins\revolution_slider\documentation\assets\js\README.md" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\arrows.psd" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\bullets.psd" />
+    <Content Include="Plugins\revolution_slider\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="Content\datatables-1.10.0\bower.json" />
+    <Content Include="Content\datatables-1.10.0\composer.json" />
+    <Content Include="Content\datatables-1.10.0\Contributing.md" />
+    <Content Include="Content\datatables-1.10.0\dataTables.jquery.json" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\examples.php" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\font\raleway_thin-webfont.eot" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\font\raleway_thin-webfont.ttf" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\font\raleway_thin-webfont.woff" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\jqueryui\dataTables.jqueryui.scss" />
+    <Content Include="Content\datatables-1.10.0\examples\resources\syntax\Syntax Highlighter license" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\ids-arrays.php" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\ids-objects.php" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\jsonp.php" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\objects.php" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\post.php" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\server_processing.php" />
+    <Content Include="Content\datatables-1.10.0\examples\server_side\scripts\ssp.class.php" />
+    <Content Include="Content\datatables-1.10.0\extensions\Scroller\examples\data\ssp.php" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\psd\collection.psd" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\psd\copy document.psd" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\psd\file_types.psd" />
+    <Content Include="Content\datatables-1.10.0\extensions\TableTools\images\psd\printer.psd" />
+    <Content Include="Content\datatables-1.10.0\media\images\Sorting icons.psd" />
+    <Content Include="Content\datatables-1.10.0\package.json" />
+    <Content Include="Content\datatables-1.10.0\Readme.md" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\easyfis - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap-datepicker\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-select2\select2-spinner.gif" />
+    <Content Include="Content\bootstrap-select2\select2.css" />
+    <Content Include="Scripts\bootstrap-select2\select2.js" />
+    <Content Include="Scripts\bootstrap-select2\select2.min.js" />
+    <Content Include="Scripts\bootstrap-select2\select2.png" />
+    <Content Include="Content\bootstrap-select2\select2x2.png" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_ar.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_bg.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_ca.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_cs.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_da.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_de.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_el.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_es.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_et.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_eu.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_fa.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_fi.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_fr.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_gl.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_he.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_hr.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_hu.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_id.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_is.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_it.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_ja.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_ko.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_lt.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_lv.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_mk.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_ms.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_nl.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_no.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_pl.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_pt-BR.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_pt-PT.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_ro.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_ru.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_sk.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_sv.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_th.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_tr.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_ua.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_vi.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_zh-CN.js" />
+    <Content Include="Scripts\bootstrap-select2\select2_locale_zh-TW.js" />
+    <Content Include="Scripts\bootstrap-validation\jqBootstrapValidation.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.tab.js" />
+    <Content Include="Scripts\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Scripts\datatable\jquery.dataTables.js" />
+    <Content Include="Scripts\datatable\jquery.dataTables.min.js" />
+    <Content Include="Scripts\datatable\jquery.dataTables.rowGrouping.js" />
+    <Content Include="Scripts\datatable\jquery.js" />
+    <Content Include="Scripts\datatable\TableTools.js" />
+    <Content Include="Scripts\easyfis\easyfis.utils.v4.js" />
+    <Content Include="Scripts\easyfis\easyfis.utils.v1.js" />
+    <Content Include="Scripts\easyfis\easyfis.utils.js" />
+    <Content Include="Scripts\easyfis\easyfis.utils.v2.js" />
+    <Content Include="Scripts\easyfis\easyfis.utils.v3.js" />
+    <Content Include="Scripts\index.js" />
+    <Content Include="Scripts\jquery\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\datatable\old\jquery.dataTables.js" />
+    <Content Include="Scripts\datatable\old\jquery.dataTables.min.js" />
+    <Content Include="Scripts\knockout\json2.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\bootstrap-daterangepicker\moment.js" />
+    <Content Include="Scripts\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="Scripts\datatable\old\TableTools.js" />
+    <Content Include="Scripts\bootstrap-typeahead\typeahead.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\datatable\old\ZeroClipboard.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Support.aspx" />
+    <Content Include="View\Admin\User.aspx" />
+    <Content Include="View\MstAccountCashFlowDetail.aspx" />
+    <Content Include="View\MstAccountList.aspx" />
+    <Content Include="View\MstAccountDetail.aspx" />
+    <Content Include="View\MstAccountTypeDetail.aspx" />
+    <Content Include="View\MstArticleBankDetail.aspx" />
+    <Content Include="View\MstCompanyDetail.aspx" />
+    <Content Include="View\MstCustomerDetail.aspx" />
+    <Content Include="View\MstCustomerList.aspx" />
+    <Content Include="View\MstDiscountDetail.aspx" />
+    <Content Include="View\MstDiscountList.aspx" />
+    <Content Include="View\MstItemDetail.aspx" />
+    <Content Include="View\MstItemList.aspx" />
+    <Content Include="View\MstPayTypeDetail.aspx" />
+    <Content Include="View\MstSupplierDetail.aspx" />
+    <Content Include="View\MstSupplierList.aspx" />
+    <Content Include="View\MstTaxDetail.aspx" />
+    <Content Include="View\MstTermDetail.aspx" />
+    <Content Include="View\MstUnitDetail.aspx" />
+    <Content Include="View\MstUserStaffDetail.aspx" />
+    <Content Include="View\MstUserStaffList.aspx" />
+    <Content Include="View\RepCollection.aspx" />
+    <Content Include="View\RepDisbursement.aspx" />
+    <Content Include="View\RepFinancialStatement.aspx" />
+    <Content Include="View\RepInventory.aspx" />
+    <Content Include="View\RepPurchases.aspx" />
+    <Content Include="View\RepSales.aspx" />
+    <Content Include="View\SysFolders.aspx" />
+    <Content Include="View\SysMenu.aspx" />
+    <Content Include="View\RepAccountsPayable.aspx" />
+    <Content Include="View\RepAccountsReceivable.aspx" />
+    <Content Include="View\SysUtilities.aspx" />
+    <Content Include="View\TrnBank.aspx" />
+    <Content Include="View\TrnCollectionDetail.aspx" />
+    <Content Include="View\TrnCollectionList.aspx" />
+    <Content Include="View\TrnDisbursementDetail.aspx" />
+    <Content Include="View\TrnDisbursementList.aspx" />
+    <Content Include="View\TrnJournalVoucherDetail.aspx" />
+    <Content Include="View\TrnJournalVoucherList.aspx" />
+    <Content Include="View\TrnPurchaseInvoiceDetail.aspx" />
+    <Content Include="View\TrnPurchaseInvoiceList.aspx" />
+    <Content Include="View\TrnPurchaseOrderDetail.aspx" />
+    <Content Include="View\TrnPurchaseOrderList.aspx" />
+    <Content Include="View\TrnSalesInvoiceDetail.aspx" />
+    <Content Include="View\TrnSalesInvoiceList.aspx" />
+    <Content Include="View\TrnSalesOrderDetail.aspx" />
+    <Content Include="View\TrnSalesOrderList.aspx" />
+    <Content Include="View\TrnStockInDetail.aspx" />
+    <Content Include="View\TrnStockInList.aspx" />
+    <Content Include="View\TrnStockOutDetail.aspx" />
+    <Content Include="View\TrnStockOutList.aspx" />
+    <Content Include="View\TrnStockTransferDetail.aspx" />
+    <Content Include="View\TrnStockTransferList.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="Scripts\jquery\jquery-1.9.1.min.map" />
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\CaptchaImage.cs" />
+    <Compile Include="Account\JpegImage.aspx.cs">
+      <DependentUpon>JpegImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap.Master.cs">
+      <DependentUpon>Bootstrap.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap.Master.designer.cs">
+      <DependentUpon>Bootstrap.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Bank.cs" />
+    <Compile Include="Business\Inventory.cs" />
+    <Compile Include="Business\JournalEntry.cs" />
+    <Compile Include="Business\Security.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AdminUserController.cs" />
+    <Compile Include="Controllers\MstAccountBudgetLineController.cs" />
+    <Compile Include="Controllers\MstAccountCashFlowController.cs" />
+    <Compile Include="Controllers\MstArticleBankController.cs" />
+    <Compile Include="Controllers\MstArticleItemComponentController.cs" />
+    <Compile Include="Controllers\MstArticleItemController.cs" />
+    <Compile Include="Controllers\MstArticleCustomerController.cs" />
+    <Compile Include="Controllers\MstArticleItemInventoryController.cs" />
+    <Compile Include="Controllers\MstArticleItemPriceController.cs" />
+    <Compile Include="Controllers\MstArticleItemUnitController.cs" />
+    <Compile Include="Controllers\MstArticleSupplierController.cs" />
+    <Compile Include="Controllers\MstCompanyController.cs" />
+    <Compile Include="Controllers\MstDiscountController.cs" />
+    <Compile Include="Controllers\MstPayTypeController.cs" />
+    <Compile Include="Controllers\MstTaxController.cs" />
+    <Compile Include="Controllers\MstTermController.cs" />
+    <Compile Include="Controllers\MstUnitController.cs" />
+    <Compile Include="Controllers\MstUserController.cs" />
+    <Compile Include="Controllers\MstUserSerialNumberController.cs" />
+    <Compile Include="Controllers\MstUserStaffController.cs" />
+    <Compile Include="Controllers\MstUserStaffRoleController.cs" />
+    <Compile Include="Controllers\RepAccountsPayableController.cs" />
+    <Compile Include="Controllers\RepAccountsReceivableController.cs" />
+    <Compile Include="Controllers\RepAccountsReceivableSummaryController.cs" />
+    <Compile Include="Controllers\RepCollectionBookController.cs" />
+    <Compile Include="Controllers\RepCollectionDetailController.cs" />
+    <Compile Include="Controllers\RepCollectionSummaryController.cs" />
+    <Compile Include="Controllers\RepDisbursementBookController.cs" />
+    <Compile Include="Controllers\RepDisbursementDetailController.cs" />
+    <Compile Include="Controllers\RepDisbursementSummaryController.cs" />
+    <Compile Include="Controllers\RepFSAccountLedgerController.cs" />
+    <Compile Include="Controllers\RepFSBalanceSheetController.cs" />
+    <Compile Include="Controllers\RepFSCashFlowStatementController.cs" />
+    <Compile Include="Controllers\RepFSIncomeStatementController.cs" />
+    <Compile Include="Controllers\RepFSTrialBalanceController.cs" />
+    <Compile Include="Controllers\RepInventoryBookController.cs" />
+    <Compile Include="Controllers\RepInventoryController.cs" />
+    <Compile Include="Controllers\RepPurchaseBookController.cs" />
+    <Compile Include="Controllers\RepPurchaseDetailController.cs" />
+    <Compile Include="Controllers\RepPurchaseSummaryController.cs" />
+    <Compile Include="Controllers\RepSalesBookController.cs" />
+    <Compile Include="Controllers\RepSalesDetailController.cs" />
+    <Compile Include="Controllers\RepSalesSummaryController.cs" />
+    <Compile Include="Controllers\RepStockCardController.cs" />
+    <Compile Include="Controllers\RepStockInController.cs" />
+    <Compile Include="Controllers\RepStockOutController.cs" />
+    <Compile Include="Controllers\RepStockTransferController.cs" />
+    <Compile Include="Controllers\SelectAccountCashFlowController.cs" />
+    <Compile Include="Controllers\SelectAccountCategoryController.cs" />
+    <Compile Include="Controllers\SelectAccountTypeController.cs" />
+    <Compile Include="Controllers\SelectDefaultBranchController.cs" />
+    <Compile Include="Controllers\SelectDefaultPeriodController.cs" />
+    <Compile Include="Controllers\SelectPageController.cs" />
+    <Compile Include="Controllers\SelectRoleController.cs" />
+    <Compile Include="Controllers\SelectSalesInvoiceController.cs" />
+    <Compile Include="Controllers\SelectBankController.cs" />
+    <Compile Include="Controllers\SelectCompanyController.cs" />
+    <Compile Include="Controllers\SelectCustomerController.cs" />
+    <Compile Include="Controllers\SelectDiscountController.cs" />
+    <Compile Include="Controllers\SelectItemController.cs" />
+    <Compile Include="Controllers\SelectItemInventoryController.cs" />
+    <Compile Include="Controllers\SelectItemPriceController.cs" />
+    <Compile Include="Controllers\SelectItemUnitController.cs" />
+    <Compile Include="Controllers\SelectPayTypeController.cs" />
+    <Compile Include="Controllers\SelectPeriodController.cs" />
+    <Compile Include="Controllers\SelectPurchaseInvoiceController.cs" />
+    <Compile Include="Controllers\SelectPurchaseOrderController.cs" />
+    <Compile Include="Controllers\SelectSalesOrderController.cs" />
+    <Compile Include="Controllers\SelectStockInController.cs" />
+    <Compile Include="Controllers\SelectSupplierController.cs" />
+    <Compile Include="Controllers\SelectTaxController.cs" />
+    <Compile Include="Controllers\SelectTaxTypeController.cs" />
+    <Compile Include="Controllers\SelectTemplateController.cs" />
+    <Compile Include="Controllers\SelectTermController.cs" />
+    <Compile Include="Controllers\SelectUnitController.cs" />
+    <Compile Include="Controllers\SelectUserController.cs" />
+    <Compile Include="Controllers\SysItemSearchController.cs" />
+    <Compile Include="Controllers\SysReportController.cs" />
+    <Compile Include="Controllers\TrnBankController.cs" />
+    <Compile Include="Controllers\TrnBankSummaryController.cs" />
+    <Compile Include="Controllers\TrnDisbursementController.cs" />
+    <Compile Include="Controllers\TrnCollectionLineController.cs" />
+    <Compile Include="Controllers\TrnCollectionController.cs" />
+    <Compile Include="Controllers\SelectArticleController.cs" />
+    <Compile Include="Controllers\MstAccountCategoryController.cs" />
+    <Compile Include="Controllers\MstAccountController.cs" />
+    <Compile Include="Controllers\MstAccountTypeController.cs" />
+    <Compile Include="Controllers\SelectAccountController.cs" />
+    <Compile Include="Controllers\SelectBranchController.cs" />
+    <Compile Include="Controllers\SelectStaffController.cs" />
+    <Compile Include="Controllers\TrnDisbursementLineController.cs" />
+    <Compile Include="Controllers\TrnJournalController.cs" />
+    <Compile Include="Controllers\TrnJournalVoucherController.cs" />
+    <Compile Include="Controllers\TrnJournalVoucherLineController.cs" />
+    <Compile Include="Controllers\TrnPurchaseInvoiceController.cs" />
+    <Compile Include="Controllers\TrnPurchaseInvoiceLineController.cs" />
+    <Compile Include="Controllers\TrnPurchaseOrderController.cs" />
+    <Compile Include="Controllers\TrnPurchaseOrderLineController.cs" />
+    <Compile Include="Controllers\TrnSalesInvoiceController.cs" />
+    <Compile Include="Controllers\TrnSalesInvoiceLineController.cs" />
+    <Compile Include="Controllers\TrnSalesOrderController.cs" />
+    <Compile Include="Controllers\TrnSalesOrderLineController.cs" />
+    <Compile Include="Controllers\TrnStockInController.cs" />
+    <Compile Include="Controllers\TrnStockInLineController.cs" />
+    <Compile Include="Controllers\TrnStockOutController.cs" />
+    <Compile Include="Controllers\TrnStockOutLineController.cs" />
+    <Compile Include="Controllers\TrnStockTransferController.cs" />
+    <Compile Include="Controllers\TrnStockTransferLineController.cs" />
+    <Compile Include="Data\wfmis.cs">
+      <DependentUpon>wfmis.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\wfmis.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>wfmis.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminUser.cs" />
+    <Compile Include="Models\MstAccountBudgetLine.cs" />
+    <Compile Include="Models\MstAccountCashFlow.cs" />
+    <Compile Include="Models\MstArticleItemInventory.cs" />
+    <Compile Include="Models\MstArticleItemPrice.cs" />
+    <Compile Include="Models\MstArticleItemUnit.cs" />
+    <Compile Include="Models\MstArticleType.cs" />
+    <Compile Include="Models\MstArticleSupplier.cs" />
+    <Compile Include="Models\MstArticleItemComponent.cs" />
+    <Compile Include="Models\MstArticleItem.cs" />
+    <Compile Include="Models\MstArticleCustomer.cs" />
+    <Compile Include="Models\MstArticleBatch.cs" />
+    <Compile Include="Models\MstArticleBank.cs" />
+    <Compile Include="Models\MstArticle.cs" />
+    <Compile Include="Models\MstDiscount.cs" />
+    <Compile Include="Models\MstPayType.cs" />
+    <Compile Include="Models\MstTax.cs" />
+    <Compile Include="Models\MstTaxType.cs" />
+    <Compile Include="Models\MstTerm.cs" />
+    <Compile Include="Models\MstUnit.cs" />
+    <Compile Include="Models\MstUserStaff.cs" />
+    <Compile Include="Models\MstUserStaffRole.cs" />
+    <Compile Include="Models\RepAccountsPayable.cs" />
+    <Compile Include="Models\RepAccountsReceivable.cs" />
+    <Compile Include="Models\RepAccountsReceivableSummary.cs" />
+    <Compile Include="Models\RepCollectionBook.cs" />
+    <Compile Include="Models\RepCollectionDetail.cs" />
+    <Compile Include="Models\RepCollectionSummary.cs" />
+    <Compile Include="Models\RepDisbursementBook.cs" />
+    <Compile Include="Models\RepDisbursementDetail.cs" />
+    <Compile Include="Models\RepDisbursementSummary.cs" />
+    <Compile Include="Models\RepFSAccountLedger.cs" />
+    <Compile Include="Models\RepFSBalanceSheet.cs" />
+    <Compile Include="Models\RepFSCashFlowStatement.cs" />
+    <Compile Include="Models\RepFSIncomeStatement.cs" />
+    <Compile Include="Models\RepFSTrialBalance.cs" />
+    <Compile Include="Models\RepStockCard.cs" />
+    <Compile Include="Models\RepInventory.cs" />
+    <Compile Include="Models\RepPurchaseBook.cs" />
+    <Compile Include="Models\RepPurchaseDetail.cs" />
+    <Compile Include="Models\RepPurchaseSummary.cs" />
+    <Compile Include="Models\RepInventoryBook.cs" />
+    <Compile Include="Models\RepSalesBook.cs" />
+    <Compile Include="Models\RepSalesDetail.cs" />
+    <Compile Include="Models\RepSalesSummary.cs" />
+    <Compile Include="Models\RepStockTransfer.cs" />
+    <Compile Include="Models\RepStockOut.cs" />
+    <Compile Include="Models\RepStockIn.cs" />
+    <Compile Include="Models\SelectPagedObject.cs" />
+    <Compile Include="Models\SysDataTablePager.cs" />
+    <Compile Include="Models\TrnBank.cs" />
+    <Compile Include="Models\TrnBankSummary.cs" />
+    <Compile Include="Models\TrnInventory.cs" />
+    <Compile Include="Models\TrnJournal.cs" />
+    <Compile Include="Models\TrnStockTransferLine.cs" />
+    <Compile Include="Models\TrnStockTransfer.cs" />
+    <Compile Include="Models\TrnStockOutLine.cs" />
+    <Compile Include="Models\TrnStockOut.cs" />
+    <Compile Include="Models\TrnStockInLine.cs" />
+    <Compile Include="Models\TrnStockIn.cs" />
+    <Compile Include="Models\TrnSalesOrderLine.cs" />
+    <Compile Include="Models\TrnSalesOrder.cs" />
+    <Compile Include="Models\TrnSalesInvoiceLine.cs" />
+    <Compile Include="Models\TrnSalesInvoice.cs" />
+    <Compile Include="Models\TrnPurchaseOrderLine.cs" />
+    <Compile Include="Models\TrnPurchaseOrder.cs" />
+    <Compile Include="Models\TrnPurchaseInvoiceLine.cs" />
+    <Compile Include="Models\TrnPurchaseInvoice.cs" />
+    <Compile Include="Models\TrnDisbursementLine.cs" />
+    <Compile Include="Models\TrnDisbursement.cs" />
+    <Compile Include="Models\TrnCollectionLine.cs" />
+    <Compile Include="Models\TrnCollection.cs" />
+    <Compile Include="Models\MstAccount.cs" />
+    <Compile Include="Models\MstAccountCategory.cs" />
+    <Compile Include="Models\MstAccountType.cs" />
+    <Compile Include="Models\MstBranch.cs" />
+    <Compile Include="Models\MstCompany.cs" />
+    <Compile Include="Models\MstPeriod.cs" />
+    <Compile Include="Models\MstUser.cs" />
+    <Compile Include="Models\SelectObject.cs" />
+    <Compile Include="Models\TrnJournalVoucher.cs" />
+    <Compile Include="Models\TrnJournalVoucherLine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Support.aspx.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Support.aspx.designer.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Admin\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstAccountCashFlowDetail.aspx.cs">
+      <DependentUpon>MstAccountCashFlowDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstAccountCashFlowDetail.aspx.designer.cs">
+      <DependentUpon>MstAccountCashFlowDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstAccountList.aspx.cs">
+      <DependentUpon>MstAccountList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstAccountList.aspx.designer.cs">
+      <DependentUpon>MstAccountList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstAccountDetail.aspx.cs">
+      <DependentUpon>MstAccountDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstAccountDetail.aspx.designer.cs">
+      <DependentUpon>MstAccountDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstAccountTypeDetail.aspx.cs">
+      <DependentUpon>MstAccountTypeDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstAccountTypeDetail.aspx.designer.cs">
+      <DependentUpon>MstAccountTypeDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstArticleBankDetail.aspx.cs">
+      <DependentUpon>MstArticleBankDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstArticleBankDetail.aspx.designer.cs">
+      <DependentUpon>MstArticleBankDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstCompanyDetail.aspx.cs">
+      <DependentUpon>MstCompanyDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstCompanyDetail.aspx.designer.cs">
+      <DependentUpon>MstCompanyDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstCustomerDetail.aspx.cs">
+      <DependentUpon>MstCustomerDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstCustomerDetail.aspx.designer.cs">
+      <DependentUpon>MstCustomerDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstCustomerList.aspx.cs">
+      <DependentUpon>MstCustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstCustomerList.aspx.designer.cs">
+      <DependentUpon>MstCustomerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstDiscountDetail.aspx.cs">
+      <DependentUpon>MstDiscountDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstDiscountDetail.aspx.designer.cs">
+      <DependentUpon>MstDiscountDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstDiscountList.aspx.cs">
+      <DependentUpon>MstDiscountList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstDiscountList.aspx.designer.cs">
+      <DependentUpon>MstDiscountList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstItemDetail.aspx.cs">
+      <DependentUpon>MstItemDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstItemDetail.aspx.designer.cs">
+      <DependentUpon>MstItemDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstItemList.aspx.cs">
+      <DependentUpon>MstItemList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstItemList.aspx.designer.cs">
+      <DependentUpon>MstItemList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstPayTypeDetail.aspx.cs">
+      <DependentUpon>MstPayTypeDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstPayTypeDetail.aspx.designer.cs">
+      <DependentUpon>MstPayTypeDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstSupplierDetail.aspx.cs">
+      <DependentUpon>MstSupplierDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstSupplierDetail.aspx.designer.cs">
+      <DependentUpon>MstSupplierDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstSupplierList.aspx.cs">
+      <DependentUpon>MstSupplierList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstSupplierList.aspx.designer.cs">
+      <DependentUpon>MstSupplierList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstTaxDetail.aspx.cs">
+      <DependentUpon>MstTaxDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstTaxDetail.aspx.designer.cs">
+      <DependentUpon>MstTaxDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstTermDetail.aspx.cs">
+      <DependentUpon>MstTermDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstTermDetail.aspx.designer.cs">
+      <DependentUpon>MstTermDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstUnitDetail.aspx.cs">
+      <DependentUpon>MstUnitDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstUnitDetail.aspx.designer.cs">
+      <DependentUpon>MstUnitDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstUserStaffDetail.aspx.cs">
+      <DependentUpon>MstUserStaffDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstUserStaffDetail.aspx.designer.cs">
+      <DependentUpon>MstUserStaffDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MstUserStaffList.aspx.cs">
+      <DependentUpon>MstUserStaffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MstUserStaffList.aspx.designer.cs">
+      <DependentUpon>MstUserStaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RepCollection.aspx.cs">
+      <DependentUpon>RepCollection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RepCollection.aspx.designer.cs">
+      <DependentUpon>RepCollection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RepDisbursement.aspx.cs">
+      <DependentUpon>RepDisbursement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RepDisbursement.aspx.designer.cs">
+      <DependentUpon>RepDisbursement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RepFinancialStatement.aspx.cs">
+      <DependentUpon>RepFinancialStatement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RepFinancialStatement.aspx.designer.cs">
+      <DependentUpon>RepFinancialStatement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RepInventory.aspx.cs">
+      <DependentUpon>RepInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RepInventory.aspx.designer.cs">
+      <DependentUpon>RepInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RepPurchases.aspx.cs">
+      <DependentUpon>RepPurchases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RepPurchases.aspx.designer.cs">
+      <DependentUpon>RepPurchases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RepSales.aspx.cs">
+      <DependentUpon>RepSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RepSales.aspx.designer.cs">
+      <DependentUpon>RepSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SysFolders.aspx.cs">
+      <DependentUpon>SysFolders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\SysFolders.aspx.designer.cs">
+      <DependentUpon>SysFolders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SysMenu.aspx.cs">
+      <DependentUpon>SysMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\SysMenu.aspx.designer.cs">
+      <DependentUpon>SysMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RepAccountsPayable.aspx.cs">
+      <DependentUpon>RepAccountsPayable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RepAccountsPayable.aspx.designer.cs">
+      <DependentUpon>RepAccountsPayable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RepAccountsReceivable.aspx.cs">
+      <DependentUpon>RepAccountsReceivable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RepAccountsReceivable.aspx.designer.cs">
+      <DependentUpon>RepAccountsReceivable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\SysUtilities.aspx.cs">
+      <DependentUpon>SysUtilities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\SysUtilities.aspx.designer.cs">
+      <DependentUpon>SysUtilities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnBank.aspx.cs">
+      <DependentUpon>TrnBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnBank.aspx.designer.cs">
+      <DependentUpon>TrnBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnCollectionDetail.aspx.cs">
+      <DependentUpon>TrnCollectionDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnCollectionDetail.aspx.designer.cs">
+      <DependentUpon>TrnCollectionDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnCollectionList.aspx.cs">
+      <DependentUpon>TrnCollectionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnCollectionList.aspx.designer.cs">
+      <DependentUpon>TrnCollectionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnDisbursementDetail.aspx.cs">
+      <DependentUpon>TrnDisbursementDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnDisbursementDetail.aspx.designer.cs">
+      <DependentUpon>TrnDisbursementDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnDisbursementList.aspx.cs">
+      <DependentUpon>TrnDisbursementList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnDisbursementList.aspx.designer.cs">
+      <DependentUpon>TrnDisbursementList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnJournalVoucherDetail.aspx.cs">
+      <DependentUpon>TrnJournalVoucherDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnJournalVoucherDetail.aspx.designer.cs">
+      <DependentUpon>TrnJournalVoucherDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnJournalVoucherList.aspx.cs">
+      <DependentUpon>TrnJournalVoucherList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnJournalVoucherList.aspx.designer.cs">
+      <DependentUpon>TrnJournalVoucherList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnPurchaseInvoiceDetail.aspx.cs">
+      <DependentUpon>TrnPurchaseInvoiceDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnPurchaseInvoiceDetail.aspx.designer.cs">
+      <DependentUpon>TrnPurchaseInvoiceDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnPurchaseInvoiceList.aspx.cs">
+      <DependentUpon>TrnPurchaseInvoiceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnPurchaseInvoiceList.aspx.designer.cs">
+      <DependentUpon>TrnPurchaseInvoiceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnPurchaseOrderDetail.aspx.cs">
+      <DependentUpon>TrnPurchaseOrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnPurchaseOrderDetail.aspx.designer.cs">
+      <DependentUpon>TrnPurchaseOrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnPurchaseOrderList.aspx.cs">
+      <DependentUpon>TrnPurchaseOrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnPurchaseOrderList.aspx.designer.cs">
+      <DependentUpon>TrnPurchaseOrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnSalesInvoiceDetail.aspx.cs">
+      <DependentUpon>TrnSalesInvoiceDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnSalesInvoiceDetail.aspx.designer.cs">
+      <DependentUpon>TrnSalesInvoiceDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnSalesInvoiceList.aspx.cs">
+      <DependentUpon>TrnSalesInvoiceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnSalesInvoiceList.aspx.designer.cs">
+      <DependentUpon>TrnSalesInvoiceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnSalesOrderDetail.aspx.cs">
+      <DependentUpon>TrnSalesOrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnSalesOrderDetail.aspx.designer.cs">
+      <DependentUpon>TrnSalesOrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnSalesOrderList.aspx.cs">
+      <DependentUpon>TrnSalesOrderList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnSalesOrderList.aspx.designer.cs">
+      <DependentUpon>TrnSalesOrderList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnStockInDetail.aspx.cs">
+      <DependentUpon>TrnStockInDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnStockInDetail.aspx.designer.cs">
+      <DependentUpon>TrnStockInDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnStockInList.aspx.cs">
+      <DependentUpon>TrnStockInList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnStockInList.aspx.designer.cs">
+      <DependentUpon>TrnStockInList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnStockOutDetail.aspx.cs">
+      <DependentUpon>TrnStockOutDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnStockOutDetail.aspx.designer.cs">
+      <DependentUpon>TrnStockOutDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnStockOutList.aspx.cs">
+      <DependentUpon>TrnStockOutList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnStockOutList.aspx.designer.cs">
+      <DependentUpon>TrnStockOutList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnStockTransferDetail.aspx.cs">
+      <DependentUpon>TrnStockTransferDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnStockTransferDetail.aspx.designer.cs">
+      <DependentUpon>TrnStockTransferDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrnStockTransferList.aspx.cs">
+      <DependentUpon>TrnStockTransferList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TrnStockTransferList.aspx.designer.cs">
+      <DependentUpon>TrnStockTransferList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="View\Web.config" />
+    <Content Include="Scripts\knockout\knockout-2.3.0.js" />
+    <Content Include="SQL\wfmis_oct142013.bak" />
+    <Content Include="SQL\wfmis_nov212013.rar" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\wfmis.dbml.layout">
+      <DependentUpon>wfmis.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>42936</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:46292/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

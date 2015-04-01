@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Bootstrap.master.cs" Inherits="wfmis.Bootstrap" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1" />
+
+  <title>EasyFIS</title>
+
+  <link rel="icon" href="/Images/favicon.ico" type="image/x-icon"/>
+  <link rel="shortcut icon" href="/Images/favicon.ico" type="image/x-icon"/>
+
+  <script type="text/javascript" charset="utf-8" src="/Scripts/jquery/jquery-1.9.1.js"></script>
+  <script type="text/javascript" charset="utf-8" src="/Scripts/bootstrap/bootstrap.min.js")></script> 
+  <script type="text/javascript" charset="utf-8" src="/Scripts/bootstrap/bootstrap.tab.js")></script>
+
+  <link rel="stylesheet" type="text/css" media="all" href="/Content/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="/Content/bootstrap/bootstrap-responsive.min.css" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="/Content/font-awesome/css/font-awesome.css"  />
+
+  <link rel="stylesheet" type="text/css" media="all" href="/Content/bootstrap/global.css" />
+
+  <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="Form1" runat="server">
+
+    <nav id="navigation">
+      <div class="container">
+        <ul class="navlinks">
+          <li><a href="/Default.aspx">Home</a></li>
+          <li><a href="/About.aspx">About</a></li>
+          <li><a href="/Support.aspx">Support</a></li>
+          <li>
+            <section id="login">
+                <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Disabled">
+                    <AnonymousTemplate>
+                        <a id="loginLink" runat="server" href="~/Account/Login.aspx">Login</a>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        <a id="A1" runat="server" class="mainmenu" href="~/View/SysMenu.aspx" title="System Menu">
+                            Main Menu
+                        </a>
+                        <a id="A2" runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
+                            Hello <asp:LoginName ID="LoginName1" runat="server" CssClass="username" /> !
+                        </a>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
+
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </section>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <asp:ContentPlaceHolder ID="body" runat="server"></asp:ContentPlaceHolder>
+
+    <div id="footer">
+      <div class="container">
+        <p>EasyFIS Beta - <a href="http://innosoft.ph/">© Innosoft Solutions</a>.</p>
+      </div>
+    </div>
+    
+    </form>
+
+</body>
+
+</html>
